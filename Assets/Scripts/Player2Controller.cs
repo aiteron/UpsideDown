@@ -23,6 +23,8 @@ public class Player2Controller : MonoBehaviour
 
     private Animator anim;
 
+    private int gems = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -99,5 +101,15 @@ public class Player2Controller : MonoBehaviour
         {
             footEmission.rateOverTime = 0f;
         }
+    }
+
+    public void AddGem()
+    {
+        gems++;
+    }
+
+    public int GetGemsCount()
+    {
+        return gems;
     }
 }
