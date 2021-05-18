@@ -221,7 +221,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.323798
+  orthographic size: 12.78311
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4227,6 +4227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d136487190749ed4394e2ee363c3e233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Jumping: {fileID: 0}
+  Death: {fileID: 0}
   speed: 5
   jumpForce: 15
   feetPos1: {fileID: 1097013858}
@@ -14956,6 +14958,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97be5658e5fbf0a43959054c09292d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Jumping: {fileID: 0}
+  Death: {fileID: 0}
   speed: 5
   jumpForce: 12
   feetPos1: {fileID: 2063115859}
