@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player2Controller : MonoBehaviour
 {
+    [SerializeField] private AudioSource Jumping;
+    [SerializeField] private AudioSource Death;
+
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
 
@@ -79,6 +82,7 @@ public class Player2Controller : MonoBehaviour
 
         if (coyoteTimeCounter > 0 && Input.GetKey(KeyCode.DownArrow))
         {
+            Jumping.Play();
             rb.velocity = Vector2.down * jumpForce;
             coyoteTimeCounter = 0;
         }
