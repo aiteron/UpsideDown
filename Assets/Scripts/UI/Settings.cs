@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 public class Settings : MonoBehaviour
 {
     bool isFullScreen;
+    public AudioMixer am;
 
     public void FullScreenToggle()
     {
@@ -13,15 +14,9 @@ public class Settings : MonoBehaviour
         Screen.fullScreen = isFullScreen;
     }
 
-    public AudioMixer am;
-
-    public void AudioVolume(float sliderValue)
+    public void SetVolume(float sliderValue)
     {
-        am.SetFloat("masterVolume", sliderValue);
-    }
-
-    public void Quality(int q)
-    {
-        QualitySettings.SetQualityLevel(q);
+        am.SetFloat("volume", sliderValue*70 - 50);
+        Debug.Log(sliderValue);
     }
 }

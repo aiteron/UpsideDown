@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class GemRedScript : MonoBehaviour
 {
+    [SerializeField] private AudioSource collectSound;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player2"))
         {
             collision.gameObject.GetComponent<Player2Controller>().AddGem();
             Destroy(transform.gameObject);
+            collectSound.Play();
         }
     }
 }

@@ -13,6 +13,10 @@ public class MenuControl : MonoBehaviour
     public void ExitPressed()
     {
         Application.Quit();
-        Debug.Log("Exit pressed!");
+    }
+
+    public void StopMenuMusic()
+    {
+        GameObject.Find("MenuMusic").GetComponent<MenuMusic>().StopMusic();
     }
 }
