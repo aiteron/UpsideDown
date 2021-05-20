@@ -7,6 +7,7 @@ TagManager:
   - Player1
   - Player2
   - Box
+  - Music
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Glow
   - 
   - 
   - 
@@ -46,6 +47,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 350556525
+    locked: 0
+  - name: Platforms
+    uniqueID: 1016577121
     locked: 0
   - name: Foreground
     uniqueID: 1793420439

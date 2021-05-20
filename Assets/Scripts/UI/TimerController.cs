@@ -18,6 +18,11 @@ public class TimerController : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        BeginTimer();
+    }
+
     public void BeginTimer()
     {
         timerGoing = true;
@@ -34,7 +39,12 @@ public class TimerController : MonoBehaviour
     public string GetShowTime()
     {
         return showTimer;
-    }    
+    }
+
+    public float GetFloatTime()
+    {
+        return elapsedTime;
+    }
 
     private IEnumerator UpdateTimer()
     {
@@ -42,7 +52,7 @@ public class TimerController : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
-            showTimer = timePlaying.ToString("mm':'ss'.'ff");
+            showTimer = timePlaying.ToString("mm':'ss");
 
             yield return null;
         }

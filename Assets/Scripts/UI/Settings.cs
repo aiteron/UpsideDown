@@ -5,18 +5,11 @@ using UnityEngine.Audio;
 
 public class Settings : MonoBehaviour
 {
-    bool isFullScreen;
     public AudioMixer am;
-
-    public void FullScreenToggle()
-    {
-        isFullScreen = !isFullScreen;
-        Screen.fullScreen = isFullScreen;
-    }
 
     public void SetVolume(float sliderValue)
     {
-        am.SetFloat("volume", sliderValue*70 - 50);
+        am.SetFloat("volume", sliderValue*50 - 30);
         Debug.Log(sliderValue);
     }
 }
