@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class FailManager : MonoBehaviour
 {
-    [SerializeField] private GameObject failMenuUI;
-    [SerializeField] private AudioSource failSound;
+    public GameObject failMenuUI;
+    public AudioSource failSound;
 
     public void Fail()
     {

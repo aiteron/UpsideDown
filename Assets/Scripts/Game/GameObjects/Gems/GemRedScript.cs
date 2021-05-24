@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GemRedScript : MonoBehaviour
 {
-    [SerializeField] private AudioSource collectSound;
+    public AudioSource collectSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

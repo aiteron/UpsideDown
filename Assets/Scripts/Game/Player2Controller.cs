@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Player2Controller : MonoBehaviour
 {
-    [SerializeField] private AudioSource Jumping;
+    public AudioSource Jumping;
 
-    [SerializeField] float speed;
-    [SerializeField] float jumpForce;
+    public float speed;
+    public float jumpForce;
 
-    [SerializeField] Transform feetPos1;
-    [SerializeField] Transform feetPos2;
-    [SerializeField] LayerMask whatIsGround;
+    public Transform feetPos1;
+    public Transform feetPos2;
+    public LayerMask whatIsGround;
 
-    [SerializeField] float coyoteTime;
+    public float coyoteTime;
     private float coyoteTimeCounter;
 
-    [SerializeField] ParticleSystem stepParticles;
+    public ParticleSystem stepParticles;
     private ParticleSystem.EmissionModule footEmission;
 
     private Rigidbody2D rb;

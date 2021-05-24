@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Player1Controller : MonoBehaviour
 {
-    [SerializeField] private AudioSource Jumping;
+    public AudioSource Jumping { get; set; }
 
-    [SerializeField] float speed;
-    [SerializeField] float jumpForce;
-    
-    [SerializeField] Transform feetPos1;
-    [SerializeField] Transform feetPos2;
-    [SerializeField] LayerMask whatIsGround;
+    public float speed { get; set; }
+    public float jumpForce { get; set; }
 
-    [SerializeField] float coyoteTime;
+    public Transform feetPos1 { get; set; }
+    public Transform feetPos2 { get; set; }
+    public LayerMask whatIsGround;
+
+    public float coyoteTime { get; set; }
     private float coyoteTimeCounter;
 
-    [SerializeField] ParticleSystem stepParticles;
+    public ParticleSystem stepParticles { get; set; }
     private ParticleSystem.EmissionModule footEmission;
 
     private Rigidbody2D rb;
@@ -49,21 +49,38 @@ public class Player1Controller : MonoBehaviour
         StepParticlesUpdate(isGrounded); // show footstep effects
     }
 
+    public void MoveLeft()
+    {
+        rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
+
+        transform.localScale = new Vector2(-1, 1);
+        anim.SetBool("IsRunning", true);
+    }
+
+    public void MoveRight()
+    {
+        rb.velocity = new Vector2(speed, rb.velocity.y);
+
+        transform.localScale = new Vector2(1, 1);
+        anim.SetBool("IsRunning", true);
+    }
+
+    public void Jump()
+    {
+        Jumping.Play();
+        rb.velocity = Vector2.up * jumpForce;
+        coyoteTimeCounter = 0;
+    }
+
     private void RunUpdate()
     {
         if (Input.GetKey(KeyCode.A))
         {
-            rb.velocity = new Vector2(-1 * speed, rb.velocity.y);
-
-            transform.localScale = new Vector2(-1, 1);
-            anim.SetBool("IsRunning", true);
+            MoveLeft();
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            rb.velocity = new Vector2(speed, rb.velocity.y);
-
-            transform.localScale = new Vector2(1, 1);
-            anim.SetBool("IsRunning", true);
+            MoveRight();
         }
         else
         {
@@ -86,9 +103,7 @@ public class Player1Controller : MonoBehaviour
 
         if (coyoteTimeCounter > 0 && Input.GetKey(KeyCode.W))
         {
-            Jumping.Play();
-            rb.velocity = Vector2.up * jumpForce;
-            coyoteTimeCounter = 0;
+            Jump();
         }
 
         if (!Input.GetKey(KeyCode.W) && rb.velocity.y > 0)
