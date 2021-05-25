@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlatformScript : MonoBehaviour
 {
+    [SerializeField]
+    float velocity = 0.02f;
+
     private bool isOpen = false;
     private bool cantMove = false;
     private Vector3 openPos;
@@ -25,11 +28,11 @@ public class PlatformScript : MonoBehaviour
 
         if(isOpen)
         {
-            transform.position = Vector3.Lerp(transform.position, openPos, 0.02f);
+            transform.position = Vector3.Lerp(transform.position, openPos, velocity);
         }
         else
         {
-            transform.position = Vector3.Lerp(transform.position, closePos, 0.02f);
+            transform.position = Vector3.Lerp(transform.position, closePos, velocity);
         }
     }
 

@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Player1Controller : MonoBehaviour
 {
-    public AudioSource Jumping { get; set; }
+    public AudioSource Jumping;
 
-    public float speed { get; set; }
-    public float jumpForce { get; set; }
+    public float speed;
+    public float jumpForce;
 
-    public Transform feetPos1 { get; set; }
-    public Transform feetPos2 { get; set; }
+    public Transform feetPos1;
+    public Transform feetPos2;
     public LayerMask whatIsGround;
 
-    public float coyoteTime { get; set; }
+    public float coyoteTime;
     private float coyoteTimeCounter;
 
-    public ParticleSystem stepParticles { get; set; }
+    public ParticleSystem stepParticles;
     private ParticleSystem.EmissionModule footEmission;
 
     private Rigidbody2D rb;
