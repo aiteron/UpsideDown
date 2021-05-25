@@ -110,6 +110,7 @@ public class PlayerTests
         box.GetComponent<BoxCollider2D>().size = new Vector2(15, 1);
 
         var spikes = new GameObject().AddComponent<SpikesScript>();
+        spikes.gameObject.AddComponent<SpriteRenderer>();
         spikes.gameObject.AddComponent<BoxCollider2D>();
         spikes.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
         spikes.gameObject.GetComponent<BoxCollider2D>().size = new Vector2(5, 5);
