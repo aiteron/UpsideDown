@@ -9,7 +9,6 @@ public class SpikesScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2"))
         {
             GameObject.Find("_managerFail").GetComponent<FailManager>().Fail();
-            transform.gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 }

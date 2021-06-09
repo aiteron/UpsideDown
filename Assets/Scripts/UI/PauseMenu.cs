@@ -25,9 +25,9 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        pauseMenuUI.GetComponent<Animator>().SetTrigger("PauseDisabled");
     }
 
     public void Restart()
@@ -39,9 +39,9 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-        pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        pauseMenuUI.GetComponent<Animator>().SetTrigger("PauseEnabled");
     }
 
     public void LoadMenu()
