@@ -41595,6 +41595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35bfcec7a855eca41a9378095b81e618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsDeathMenu: 0
   failMenuUI: {fileID: 90765720}
   failSound: {fileID: 1834284585}
 --- !u!224 &901663269
@@ -42118,7 +42119,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 6229b0fcd3118dc469d47f84be03ebdf, type: 2}
   m_audioClip: {fileID: 8300000, guid: 63978c2636a55fa4da16139a450147bd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
